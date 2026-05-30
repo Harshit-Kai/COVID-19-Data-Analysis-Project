@@ -114,9 +114,9 @@ Created an interactive Tableau dashboard featuring:
 
 ![Geographic Analysis](Images/geographic_analysis.png)
 
-### Infection Trend Analysis
+### Global Cases Analysis
 
-![Infection Trend Analysis](Images/infection_trend_analysis.png)
+![Global Cases Analysis](Images/global_cases_analysis.png)
 
 ---
 
