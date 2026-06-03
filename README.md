@@ -196,6 +196,6 @@ This project was created as part of a Data Analytics portfolio to demonstrate pr
 
 Aspiring Data Analyst
 
-LinkedIn: www.linkedin.com/in/your-profile
+LinkedIn: [www.linkedin.com/in/harshit-kaishwar-7286112b9]
 
-GitHub: github.com/your-username
+
