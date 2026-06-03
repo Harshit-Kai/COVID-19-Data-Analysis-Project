@@ -1,138 +1,128 @@
-# COVID-19 Data Analysis using SQL & Tableau
+# COVID-19 Global Data Analysis | SQL & Tableau
+
+A data analytics project using SQL Server and Tableau to explore global COVID-19 trends — tracking infection rates, death counts, and vaccination progress across countries and continents.
+
+---
 
 ## Project Overview
 
-This project analyses global COVID-19 data using SQL and Tableau to uncover trends in infection rates, death counts, and population impacts across countries and continents.
+This project analyses one of the largest real-world public health datasets available — global COVID-19 case and vaccination data — to understand how the pandemic unfolded across different regions.
 
-The project demonstrates the complete data analytics workflow, including data cleaning, exploratory data analysis (EDA), SQL querying, and dashboard development.
+> *How did infection and death rates differ across countries and continents, and what did vaccination rollout look like over time?*
+
+The project demonstrates a complete analytics workflow: raw data → SQL exploration → Tableau visualisation → insight communication.
 
 ---
 
 ## Project Objectives
 
-- Analyse global COVID-19 case trends.
-- Identify countries with the highest infection rates.
-- Compare death counts across continents.
-- Calculate infection and death percentages.
-- Build an interactive Tableau dashboard.
-- Generate actionable insights from real-world data.
+- Track total cases, deaths, and death rates at global, continental, and country level
+- Identify which countries had the highest infection rates relative to population
+- Compare death counts across continents
+- Analyse vaccination rollout progress over time
+- Build a multi-panel Tableau dashboard that communicates the full story
 
 ---
 
 ## Tools Used
 
-- SQL Server
-- Tableau
-- Microsoft Excel
-- GitHub
+| Tool | Purpose |
+|------|---------|
+| SQL Server | Data exploration and analysis |
+| Tableau | Interactive dashboard development |
+| Microsoft Excel | Initial data inspection |
 
 ---
 
-## Dataset Information
+## Dataset
 
-### CovidDeaths Dataset
+**Source:** Our World in Data — COVID-19 Public Dataset
 
-Contains:
+### CovidDeaths Table
+- Country, Date, Population, Total Cases, New Cases, Total Deaths, New Deaths
 
-- Country/Location
-- Date
-- Population
-- Total Cases
-- New Cases
-- Total Deaths
-- New Deaths
-
-### CovidVaccinations Dataset
-
-Contains:
-
-- Country/Location
-- Date
-- New Vaccinations
-- Total Vaccinations
+### CovidVaccinations Table
+- Country, Date, New Vaccinations, Total Vaccinations, People Vaccinated
 
 ---
 
-## Project Workflow
+## Global Summary
 
-### Data Cleaning
-
-- Imported datasets into SQL Server.
-- Checked for null values.
-- Converted date columns to proper formats.
-- Removed unnecessary records.
-- Standardised country names.
-- Verified data integrity before analysis.
-
-### Exploratory Data Analysis (EDA)
-
-Analysis performed:
-
-- Total Cases vs Total Deaths
-- Total Cases vs Population
-- Countries with the Highest Infection Rate
-- Countries with the Highest Death Count
-- Continent-wise Death Analysis
-- Global Statistics
-- Vaccination Progress Analysis
-
-### Dashboard Development
-
-Created an interactive Tableau dashboard featuring:
-
-- Global COVID-19 KPIs
-- Death Count by Continent
-- Infection Rate by Country
-- Geographic Analysis
-- Trend Analysis Over Time
+| Metric | Value |
+|--------|-------|
+| Total Cases Analysed | 150.5 Million |
+| Total Deaths | 3.18 Million |
+| Global Death Rate | 2.11% |
 
 ---
 
-## SQL Concepts Used
+## SQL Concepts Demonstrated
 
-- Aggregate Functions
-- GROUP BY
-- ORDER BY
-- Joins
-- Common Table Expressions (CTEs)
-- Window Functions
-- Views
+This project covers the following SQL techniques:
+
+- `JOIN` — combining Deaths and Vaccinations tables
+- `GROUP BY` / `ORDER BY` — aggregating by country, continent, date
+- **Aggregate Functions** — SUM, MAX, AVG for totals and rates
+- **CTEs (Common Table Expressions)** — for multi-step calculations like rolling vaccination totals
+- **Window Functions** — rolling SUM with PARTITION BY for vaccination progress
+- **Views** — storing reusable queries for Tableau connection
+- **Calculated columns** — death percentage, infection rate vs population
+
+---
+
+## Key Insights
+
+**1. Europe recorded the highest cumulative death count of any continent.**
+Despite not having the highest case numbers globally, Europe's death toll exceeded other continents — pointing to a combination of older demographics, early pandemic unpreparedness, and healthcare system strain.
+
+**2. The global death rate of 2.11% masks extreme variation by country.**
+Some countries recorded death rates several times higher than the global average, while others stayed well below 1%. This variance reflects differences in healthcare capacity, testing rates, age demographics, and reporting standards — not just virus severity.
+
+**3. Infection rates relative to population varied dramatically.**
+Countries with small populations but high case counts showed disproportionately high infection rates. This metric (cases/population) is more meaningful than raw case numbers alone for understanding true spread.
+
+**4. Vaccination rollout was highly uneven across regions.**
+Wealthier nations accelerated vaccination programmes significantly faster than lower-income countries, creating a visible gap in the time-series data. This disparity likely influenced the divergence in later wave death rates between regions.
+
+**5. Multiple distinct infection waves are visible in the time-series.**
+The trend analysis clearly shows repeated wave patterns globally, with peaks correlating with the emergence of new variants. The delta and omicron waves are visible as distinct spikes in the line chart.
 
 ---
 
 ## Dashboard Preview
 
 ### Dashboard Overview
-
-![Dashboard Overview](Images/dashboard_overview.png)
+![Dashboard](Images/dashboard_overview.png)
 
 ### KPI Summary
-
-![KPI Summary](Images/key_metrics.png)
+![KPI](Images/key_metrics.png)
 
 ### Geographic Analysis
-
-![Geographic Analysis](Images/geographic_analysis.png)
+![Map](Images/geographic_analysis.png)
 
 ### Global Cases Analysis
-
-![Global Cases Analysis](Images/global_cases_analysis.png)
+![Trend](Images/global_cases_analysis.png)
 
 ---
 
-## Key Insights
+## 📊 Live Dashboard
+> **[View on Tableau Public](https://public.tableau.com/app/profile/harshit.kaishwar/viz/CovidDashboardAnalysis_17798724661850/Dashboard1?publish=yes)** 
 
-- Europe recorded the highest cumulative death count.
-- Infection rates varied significantly across countries.
-- Population size influenced total cases and deaths.
-- Multiple waves of COVID-19 infections were observed globally.
-- Vaccination programs expanded rapidly across many regions.
+---
+
+## Dashboard Features
+
+- **Global KPI table** — total cases, deaths, death rate at a glance
+- **Bar chart** — death count comparison by continent
+- **Geographic map** — infection rate by country, colour-scaled by severity
+- **Time-series line chart** — global case trend showing wave patterns
+- **Multi-panel layout** — all four views in one cohesive story
 
 ---
 
 ## Repository Structure
 
-```text
+```
 COVID-19-Data-Analysis/
 │
 ├── Data/
@@ -153,7 +143,7 @@ COVID-19-Data-Analysis/
 │   ├── dashboard_overview.png
 │   ├── key_metrics.png
 │   ├── geographic_analysis.png
-│   └── infection_trend_analysis.png
+│   └── global_cases_analysis.png
 │
 ├── Documentation/
 │   ├── Project_Objective.md
@@ -166,36 +156,15 @@ COVID-19-Data-Analysis/
 
 ---
 
-## Business Value
+## What I Learned
 
-This project demonstrates how data analytics can be used to:
-
-- Monitor global health trends.
-- Identify high-risk regions.
-- Support data-driven decision-making.
-- Visualize complex datasets effectively.
-- Generate meaningful insights from raw data.
-
----
-
-## About This Project
-
-This project was created as part of a Data Analytics portfolio to demonstrate proficiency in:
-
-- SQL Data Analysis
-- Data Cleaning
-- Exploratory Data Analysis
-- Tableau Dashboard Development
-- Business Insight Generation
+This project was built while developing SQL skills — the queries were written with reference to learning resources and modified to fit this specific dataset. The focus was on understanding *why* each query works, not just making it run. Key learning areas: CTEs for multi-step logic, window functions for rolling calculations, and connecting SQL outputs directly to Tableau.
 
 ---
 
 ## Author
 
 **Harshit Kaishwar**
-
-Aspiring Data Analyst
-
-LinkedIn: [www.linkedin.com/in/harshit-kaishwar-7286112b9]
-
-
+📧 kaishwarsid@gmail.com
+🔗 [LinkedIn](https://www.linkedin.com/in/harshit-kaishwar-7286112b9)
+🐙 [GitHub](https://github.com/Harshit-Kai)
